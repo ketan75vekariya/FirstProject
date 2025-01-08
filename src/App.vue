@@ -1,7 +1,6 @@
-<script>
+<script setup>
 import {ref} from 'vue';
-export default {
-  setup() {
+
     const message = ref('Hello Vue 3!');
     const status = ref('pending');
     const tasks = ref(['task1','task2','task3']);
@@ -16,11 +15,7 @@ export default {
         status.value = 'success';
       }
     }
-    return { message, status, tasks, link, changeStatus }
 
-    
-  },
-}
 </script>
 <template>
   <div class="container mx-auto">
