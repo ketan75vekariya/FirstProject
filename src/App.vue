@@ -1,24 +1,25 @@
 <script>
+import {ref} from 'vue';
 export default {
-  data() {
-    return {
-      message: 'Hello Vue 3!',
-      status:'pending',
-      tasks:['task1','task2','task3'],
-      link: 'https://www.google.com',
-    }
-  },
-  methods: {
-    changeStatus() {
-      if(this.status === 'success'){
-        this.status = 'pending';
-      }else if(this.status === 'pending'){
-        this.status = 'inactive';
+  setup() {
+    const message = ref('Hello Vue 3!');
+    const status = ref('pending');
+    const tasks = ref(['task1','task2','task3']);
+    const link = ref('https://www.google.com');
+
+    const changeStatus = () => {
+      if(status.value === 'success'){
+        status.value = 'pending';
+      }else if(status.value === 'pending'){
+        status.value = 'inactive';
       }else{
-        this.status = 'success';
+        status.value = 'success';
       }
     }
-  }
+    return { message, status, tasks, link, changeStatus }
+
+    
+  },
 }
 </script>
 <template>
