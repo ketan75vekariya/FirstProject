@@ -7,6 +7,17 @@ export default {
       tasks:['task1','task2','task3'],
       link: 'https://www.google.com',
     }
+  },
+  methods: {
+    changeStatus() {
+      if(this.status === 'success'){
+        this.status = 'pending';
+      }else if(this.status === 'pending'){
+        this.status = 'inactive';
+      }else{
+        this.status = 'success';
+      }
+    }
   }
 }
 </script>
@@ -22,5 +33,7 @@ export default {
       <li v-for="task in tasks" :key="task">{{task}}</li>
     </ul>
     <a :href="link">Google</a>
+    <br>
+    <button class="bg-gray-300" @click="changeStatus">Change the status</button>
   </div>
 </template>
