@@ -14,7 +14,18 @@ import {ref} from 'vue';
       }else{
         status.value = 'success';
       }
-    }
+    };
+
+    const addTask = () => {
+      if (newTask.value.trim() !== '') {
+        tasks.value.push(newTask.value);
+        newTask.value = '';
+      }
+    };
+
+    const deleteTask = (index) => {
+      tasks.value.splice(index, 1);
+    };
 
 </script>
 <template>
@@ -22,14 +33,36 @@ import {ref} from 'vue';
     <h1 class="text-3xl font-bold underline">
       {{message}}
     </h1>
+    <br>
+    <hr>
+    <br>
     <p v-if = "status === 'success'">You are active</p>
     <p v-else-if = "status === 'pending'">You are pending</p>
     <p v-else>You are inactive</p>
-    <ul class="list-disc bg-red-400">
-      <li v-for="task in tasks" :key="task">{{task}}</li>
+    <button class="bg-gray-300 mt-3 mb-3" @click="changeStatus">Change the status</button>
+    <br>
+    <hr>
+    <br>
+    <form @submit.prevent="addTask">
+      <label for="task" class="mr-3">Add a task</label>
+      <input type="text" id="newTask" v-model="newTask" name="newTask" class="border-2 mr-3 border-gray-300"/>
+      <button class="bg-gray-300" type="submit">Add</button>
+    </form>
+    <ul class="list-disc mt-3">
+      <li v-for="(task, index) in tasks" :key="task">
+        <span>
+          {{task}}
+        </span>
+        <button class="bg-gray-300 ml-4" @click="deleteTask(index)">X</button>
+      </li>
     </ul>
+    <br>
+    <hr>
+    <br>
     <a :href="link">Google</a>
     <br>
-    <button class="bg-gray-300" @click="changeStatus">Change the status</button>
+    <hr>
+    <br>
+    
   </div>
 </template>
