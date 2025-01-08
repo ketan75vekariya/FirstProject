@@ -5,6 +5,7 @@ export default {
       message: 'Hello Vue 3!',
       status:'pending',
       tasks:['task1','task2','task3'],
+      link: 'https://www.google.com',
     }
   }
 }
@@ -20,5 +21,6 @@ export default {
     <ul class="list-disc bg-red-400">
       <li v-for="task in tasks" :key="task">{{task}}</li>
     </ul>
+    <a :href="link">Google</a>
   </div>
 </template>
