@@ -3,7 +3,7 @@ export default {
   data() {
     return {
       message: 'Hello Vue 3!',
-      status:false,
+      status:'success',
     }
   }
 }
@@ -12,6 +12,6 @@ export default {
  <h1 class="text-3xl font-bold underline">
     {{message}}
   </h1>
-  <p v-if="status">You are active</p>
+  <p v-if = "status === 'success'">You are active</p>
   <p v-else>You are inactive</p>
 </template>
