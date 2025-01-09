@@ -97,6 +97,20 @@
         "contactEmail": "test@test.com",
         "contactPhone": "5555-555-555"
       }
+    },
+    {
+      "id": "02de",
+      "title": "Vue Developer",
+      "type": "Part-Time",
+      "location": "Boston, MA",
+      "description": "tea dictumst. Vestibulum iaculis euismod ante, non vestibulum lacus sagittis ac. Nulla at nibh id odio lacinia gravida. Morbi tristique tempor neque nec elementum. Phasellus euismod lobortis felis, non posuere odio blandit vitae. Sed nec justo lorem. Quisque luctus diam faucibus, lacinia lacus sed, ",
+      "salary": "Under $50K",
+      "company": {
+        "name": "Marchcorp Ltd",
+        "description": "velit facilisis lorem, rhoncus bibendum lacus massa a justo. Quisque tortor nulla, auctor sit amet maximus ac, laoreet vel elit. Aliquam porta interdum viverra. Suspendisse vel luctus odio. Pellentesque a ex luctus, posuere dolor et, fringilla ex. Morbi congue risus vitae mauris consequat, ",
+        "contactEmail": "test@test.com",
+        "contactPhone": "5555-555-555"
+      }
     }
   ]
 }
